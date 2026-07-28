@@ -79,14 +79,6 @@ export default function HowToStyleThem() {
               <Button className="absolute text-black! p-0! rounded-none bottom-0 right-0 w-14! h-14! md:w-17.5! md:h-17.5! flex items-center justify-center">
                 <PlusIcon />
               </Button>
-              {/* <button
-                aria-label={`View details for ${slide.alt}`}
-                className="absolute bottom-0 right-0 w-12 h-12 md:w-14 md:h-14 bg-primary flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
-              >
-                <span className="text-black text-2xl md:text-3xl font-bold leading-none select-none">
-                  +
-                </span>
-              </button> */}
             </div>
           </SwiperSlide>
         ))}
