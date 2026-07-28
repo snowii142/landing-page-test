@@ -8,6 +8,7 @@
   --secondary: #000000;
   --secondary-light: #525252;
   --disabled: #D9D9D9;
+  --gray-light: #F0F0F0;
 }
 
 @theme inline {
@@ -18,8 +19,18 @@
   --color-secondary: var(--secondary);
   --color-secondary-light: var(--secondary-light);
   --color-disabled: var(--disabled);
+  --color-gray-light: var(--gray-light);
   --font-outfit: var(--font-outfit);
   --font-notosansjp: var(--font-notosansjp);
   --font-roboto-condensed: var(--font-roboto-condensed);
+  --font-mizolet: mizolet, sans-serif;
+  --font-yu-gothic: yu-gothic-pr6n, sans-serif;
 }
 
+body{
+  background-color: var(--primary);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
