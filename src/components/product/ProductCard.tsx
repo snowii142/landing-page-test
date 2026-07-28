@@ -18,9 +18,10 @@ export default function ProductCard({
       {/* Product Image */}
       <div className="relative aspect-4/3 w-full">
         <Image
-          src={product.image}
+          src={selectedColor.image}
           alt={`${product.name} ${product.model}`}
           fill
+          priority
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-contain object-center"
         />

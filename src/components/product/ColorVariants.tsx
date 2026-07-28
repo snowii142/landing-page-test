@@ -10,7 +10,7 @@ export function ColorVariants({
   onSelect: (index: number) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-2 px-6 pb-6 mx-auto">
+    <div className="flex flex-wrap gap-2 px-4 pb-6 mx-auto">
       {colors.map((color, index) => (
         <button
           key={color.name}

@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   keywords:
     '商品一覧,サングラス,偏光レンズ,Meller,メラー,アイウェア,フレーム,サステイナブ,トレンド,バルセロナ,スペイン,OWNDAYS,オンデーズ,オンデイズ',
   openGraph: {
-    title: '商品一覧 | OWNDAYS × MELLER（メラー） 公式オンラインストア｜サングラス',
+    title:
+      '商品一覧 | OWNDAYS × MELLER（メラー） 公式オンラインストア｜サングラス',
     description:
       'OWNDAYS × MELLER 商品一覧。デザイン性・機能性に優れたサステナブルな素材のサングラス（全てUV99%以上カット・偏光レンズ・傷防止コート・撥水コート）を展開中。',
     images: [
@@ -42,7 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '商品一覧 | OWNDAYS × MELLER（メラー） 公式オンラインストア｜サングラス',
+    title:
+      '商品一覧 | OWNDAYS × MELLER（メラー） 公式オンラインストア｜サングラス',
     description:
       'OWNDAYS × MELLER 商品一覧。デザイン性・機能性に優れたサステナブルな素材のサングラス。',
     images: ['/images/ogp_1200x630.jpg'],

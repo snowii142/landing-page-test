@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import { Button } from './ui/Button';
+import { PlusIcon } from './icons';
 
 export type StyleSlide = {
   image: string;
@@ -34,11 +36,11 @@ export default function HowToStyleThem() {
       <div className="px-4 absolute md:px-17.5 z-10 -top-21.25">
         <div className="flex items-center justify-center">
           <h1 className="font-roboto-condensed text-[65px] xs:text-6xl leading-3 sm:text-7xl md:text-8xl text-primary select-none uppercase font-bold">
-            <div className="tracking-[-4px] w-fit bg-black leading-11">
+            <div className="tracking-[-4px] w-fit bg-black leading-11 md:leading-16.25">
               HOW TO
             </div>
             <br />
-            <div className="tracking-[-4px] w-fit bg-black leading-11">
+            <div className="tracking-[-4px] w-fit bg-black leading-11 md:leading-16.25">
               STYLE THEM
             </div>
           </h1>
@@ -74,14 +76,17 @@ export default function HowToStyleThem() {
               />
 
               {/* Plus button */}
-              <button
+              <Button className="absolute text-black! p-0! rounded-none bottom-0 right-0 w-14! h-14! md:w-17.5! md:h-17.5! flex items-center justify-center">
+                <PlusIcon />
+              </Button>
+              {/* <button
                 aria-label={`View details for ${slide.alt}`}
                 className="absolute bottom-0 right-0 w-12 h-12 md:w-14 md:h-14 bg-primary flex items-center justify-center cursor-pointer transition-opacity hover:opacity-80"
               >
                 <span className="text-black text-2xl md:text-3xl font-bold leading-none select-none">
                   +
                 </span>
-              </button>
+              </button> */}
             </div>
           </SwiperSlide>
         ))}

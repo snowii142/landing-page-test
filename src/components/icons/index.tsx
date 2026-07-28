@@ -158,3 +158,19 @@ export function CopyIcon() {
     </svg>
   );
 }
+export function PlusIcon() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M27.4167 15.6667H15.6667V27.4167H11.75V15.6667H0V11.75H11.75V0H15.6667V11.75H27.4167V15.6667Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

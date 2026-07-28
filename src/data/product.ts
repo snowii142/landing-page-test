@@ -167,7 +167,7 @@ export const products: Product[] = [
     price: 7800,
     description:
       'クラシックな長方形シェイプに、シャープなラインを取り入れたサングラス。ユニセックスで使いやすく、重厚感のあるテンプルが安定感と上質な印象を与えます。ベーシックな装いからアクセントのあるスタイルまで幅広く対応するデザインです。',
-    image: img('ML2006D', 'brown-demi', 1),
+    image: img('ML2006D', 'black', 1),
     onlineStoreUrl: '#',
     colors: [
       v('ML2006D', 'BROWN DEMI', 'black', 'ML2006D-6S C1', 'brownDemi'),
