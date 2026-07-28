@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+ต้องมี [Node.js](https://nodejs.org/) 18.18 ขึ้นไป (แนะนำ 20 LTS) และ package manager (`yarn`, `npm` หรือ `pnpm`)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install    # ติดตั้ง dependencies
+yarn dev        # รัน dev server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด [http://localhost:3000](http://localhost:3000) เพื่อดูผล
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| คำสั่ง       | ทำอะไร                                          |
+| ------------ | ----------------------------------------------- |
+| `yarn dev`   | รัน dev server (hot reload)                     |
+| `yarn build` | build + export เป็น static ไปที่โฟลเดอร์ `out/` |
+| `yarn start` | เสิร์ฟ production build                         |
+| `yarn lint`  | ตรวจโค้ดด้วย ESLint                             |
 
-## Learn More
+## Approach & Architecture
 
-To learn more about Next.js, take a look at the following resources:
+### Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 16 (App Router)** — โครงสร้าง React แบบ component, deploy เป็น static export
+- **Tailwind CSS v4** — utility-first, ธีม/สีกำหนดผ่าน CSS variables ใน [globals.css](src/app/globals.css)
+- **next/font** — โหลดฟอนต์ Google (Outfit, Noto Sans JP, Roboto Condensed) แบบ self-host
+- **Swiper** — สไลด์แนวนอนในเซกชัน "How to style them"
+- **Motion** — animation ของเมนูบนมือถือ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### โครงสร้างโฟลเดอร์
 
-## Deploy on Vercel
+```
+src/
+├── app/              # layout, page, global styles, metadata (SEO)
+├── components/
+│   ├── layout/       # Navbar, Footer, MobileMenu
+│   ├── hero/         # HeroSection
+│   ├── product/      # ProductCard, ProductList, Modal ฯลฯ
+│   ├── ui/           # Button และ UI ย่อย
+│   └── icons/        # SVG icons
+├── data/product.ts   # ข้อมูลสินค้า (source of truth) + helper สร้าง path รูป
+├── types/            # TypeScript types
+└── constants/        # ข้อมูลเมนู
+public/images/        # รูปภาพทั้งหมด
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### แนวคิดหลัก
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Data-driven** — สินค้าทั้งหมดมาจาก [data/product.ts](src/data/product.ts) ที่เดียว
+  มี helper (`img`, `galleriesImg`) สร้าง path รูปให้ การเพิ่มสินค้าหรือเปลี่ยนไฟล์รูปแก้ที่เดียวจบ
+- **Component แยกส่วน** — UI แบ่งเป็น component ที่ reuse ได้ ดูแลง่าย
+- **Mobile-first** — เขียน style จากจอเล็กก่อน แล้วเพิ่ม breakpoint (`sm` / `md` / `xl` / `2xl`)
