@@ -26,7 +26,7 @@ export default function HeroSection() {
 
         <div className="absolute inset-0 flex items-center justify-center top-0">
           <div className="bg-black flex items-center justify-center">
-            <h1 className="font-roboto-condensed leading-13 text-[70px] xs:text-6xl sm:text-7xl md:text-8xl tracking-[-2px] text-primary select-none uppercase font-bold">
+            <h1 className="font-roboto-condensed leading-12 md:leading-16.25 text-[70px] xs:text-6xl sm:text-7xl md:text-8xl tracking-[-2px] text-primary select-none uppercase font-bold">
               PRODUCTS
             </h1>
           </div>
